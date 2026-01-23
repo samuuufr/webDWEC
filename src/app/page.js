@@ -1,65 +1,133 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Bitcoin, TrendingUp, BarChart3, Wallet, Search, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <div className="hero min-h-screen">
+        <div className="hero-content text-center">
+          <div className="max-w-4xl mx-auto px-4">
+            {/* Logo y título principal */}
+            <div className="mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <Bitcoin className="w-16 h-16 text-orange-500" />
+                <h1 className="text-6xl font-bold text-white">CryptoWeb</h1>
+              </div>
+              <p className="text-2xl text-gray-300 mb-4">
+                Tu plataforma integral de criptomonedas
+              </p>
+              <p className="text-lg text-gray-400">
+                Análisis en tiempo real • Gestión de portafolio • Estadísticas avanzadas
+              </p>
+            </div>
+
+            {/* Tarjetas de características principales - Grid 3x2 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {/* Primera fila */}
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <TrendingUp className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Mercado en Vivo</h3>
+                  <p className="text-gray-300 text-sm">
+                    Precios actualizados en tiempo real de las principales criptomonedas
+                  </p>
+                </div>
+              </div>
+
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <BarChart3 className="w-16 h-16 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Análisis Avanzado</h3>
+                  <p className="text-gray-300 text-sm">
+                    Gráficos interactivos y estadísticas detalladas del mercado
+                  </p>
+                </div>
+              </div>
+
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <Wallet className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Portafolio Inteligente</h3>
+                  <p className="text-gray-300 text-sm">
+                    Analiza tus activos digitales con seguimiento de rendimiento
+                  </p>
+                </div>
+              </div>
+
+              {/* Segunda fila */}
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">📊</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Reportes Detallados</h3>
+                  <p className="text-gray-300 text-sm">
+                    Análisis completos de tu rendimiento y tendencias del mercado
+                  </p>
+                </div>
+              </div>
+
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">24/7</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Soporte Continuo</h3>
+                  <p className="text-gray-300 text-sm">
+                    Asistencia técnica disponible todo el día, todos los días
+                  </p>
+                </div>
+              </div>
+
+              <div className="card bg-base-100/10 backdrop-blur-sm border border-white/10">
+                <div className="card-body p-6 text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Criptomonedas</h3>
+                  <p className="text-gray-300 text-sm">
+                    Amplia variedad de activos digitales para diversificar
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Botones de acción principales*/}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 mt-16">
+              <Link 
+                href="/mercado" 
+                className="btn btn-primary btn-lg px-12 py-4 text-lg font-semibold"
+              >
+                <TrendingUp className="w-5 h-5 mr-2" />
+                Explorar Mercado
+              </Link>
+              <Link 
+                href="/portfolio" 
+                className="btn btn-outline btn-accent btn-lg px-12 py-4 text-lg font-semibold border-white/20 text-white hover:bg-white/10"
+              >
+                <Wallet className="w-5 h-5 mr-2" />
+                Mi Portafolio
+              </Link>
+            </div>
+
+            {/* Estadísticas rápidas */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-green-400">10K+</div>
+                <div className="text-gray-300">Criptomonedas</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-blue-400">$2.5T+</div>
+                <div className="text-gray-300">Market Cap</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-purple-400">$150B+</div>
+                <div className="text-gray-300">Volumen 24h</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-orange-400">99.9%</div>
+                <div className="text-gray-300">Uptime</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
